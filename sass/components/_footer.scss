@@ -11,6 +11,7 @@
   &__accent {
     color: c.$c-red;
   }
+
   &__form {
     width: 90vw;
     max-width: 350px;
@@ -52,27 +53,4 @@
   .footer {
     @include m.flex(row, space-between, 0px);
   }
-}
-
-.footer__form-test {
-  width: 90vw;
-  max-width: 350px;
-  height: 60px;
-  display: flex;
-}
-
-.footer__form-input-test {
-  background-color: transparent;
-  flex-grow: 2;
-  border: 1px solid c.$c-gray;
-  padding-inline: 10px;
-}
-
-.footer__form-button-test {
-  width: 100px;
-  padding-inline: 10px;
-  flex-grow: 1;
-  border: 1px solid c.$c-green;
-  background: c.$c-green;
-  color: c.$c-white;
 }

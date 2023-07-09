@@ -22,9 +22,7 @@
     width: 160px;
     height: 40px;
     font-size: 14px;
-    transition-property: box-shadow, font-weight;
-    transition-duration: 350ms;
-    transition-timing-function: linear;
+    @include m.transition-large(box-shadow, font-weight);
 
     &:is(:hover, :focus) {
       box-shadow: 0px 0px 15px 0px c.$c-white;

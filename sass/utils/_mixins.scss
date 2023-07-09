@@ -23,12 +23,24 @@
   gap: $gap;
 }
 
-@mixin grid {
+@mixin grid($min, $gap) {
   display: grid;
-  grid-template-columns: 3;
-  grid-template-rows: 2;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: $gap;
 }
 
 @mixin transition($property, $time: 350ms, $function: linear) {
   transition: $property $time $function;
+}
+
+@mixin transition-large(
+  $property1,
+  $property2,
+  $property3,
+  $time: 350ms,
+  $function: linear
+) {
+  transition-property: $property1, $property2, $property3;
+  transition-duration: $time;
+  transition-timing-function: $function;
 }

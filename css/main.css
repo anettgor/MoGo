@@ -208,7 +208,7 @@ html {
 .nav__menu-overlay {
   background: linear-gradient(0deg, #fbe389 0%, #f38181 100%);
   position: fixed;
-  top: 0px;
+  top: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
@@ -469,26 +469,4 @@ html {
     align-items: center;
     gap: 0px;
   }
-}
-.footer__form-test {
-  width: 90vw;
-  max-width: 350px;
-  height: 60px;
-  display: flex;
-}
-
-.footer__form-input-test {
-  background-color: transparent;
-  flex-grow: 2;
-  border: 1px solid #ccc;
-  padding-inline: 10px;
-}
-
-.footer__form-button-test {
-  width: 100px;
-  padding-inline: 10px;
-  flex-grow: 1;
-  border: 1px solid #95e1d3;
-  background: #95e1d3;
-  color: #fff;
 }/*# sourceMappingURL=main.css.map */

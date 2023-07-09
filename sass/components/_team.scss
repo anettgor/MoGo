@@ -4,9 +4,7 @@
 
 .team {
   &__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    @include m.grid(200px, 30px);
     margin-top: 50px;
   }
 
@@ -17,6 +15,7 @@
   &__photo {
     width: 100%;
     @include m.transition(transform);
+
     &-description {
       margin-top: 15px;
       @include m.flex(column, center, 5px);
@@ -45,9 +44,7 @@
       );
       position: absolute;
       opacity: 0;
-      transition-property: opacity, transform;
-      transition-duration: 350ms;
-      transition-timing-function: linear;
+      @include m.transition-large(opacity, transform);
     }
   }
 
@@ -57,9 +54,7 @@
     position: absolute;
     background-color: c.$c-yellow;
     opacity: 0;
-    transition-property: opacity, transform;
-    transition-duration: 350ms;
-    transition-timing-function: linear;
+    @include m.transition-large(opacity, transform);
 
     &-icon {
       fill: c.$c-red;

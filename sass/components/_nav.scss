@@ -38,7 +38,7 @@
     &-overlay {
       background: linear-gradient(0deg, c.$c-yellow 0%, c.$c-red 100%);
       position: fixed;
-      top: 0px;
+      top: 0;
       right: 0;
       width: 100vw;
       height: 100vh;
@@ -48,11 +48,7 @@
     &-mobile {
       font-size: 30px;
       margin-top: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
+      @include m.flex(column, center, 30px);
 
       &-link {
         color: #000;
