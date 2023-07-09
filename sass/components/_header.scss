@@ -1,0 +1,12 @@
+@use "./../abstracts/colors" as c;
+.header {
+  height: 100%;
+  background-image: linear-gradient(
+      0deg,
+      c.$c-yellow-transparency 0%,
+      c.$c-red-transparency 100%
+    ),
+    url("./../../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}

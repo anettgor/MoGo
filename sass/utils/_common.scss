@@ -1,0 +1,73 @@
+@use "./../abstracts/colors" as c;
+@use "./mixins" as m;
+@use "./../abstracts/breakpoints" as b;
+
+p {
+  color: #999;
+  line-height: 120%;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hidden {
+  display: none;
+}
+.overflow {
+  overflow: hidden;
+}
+
+.container {
+  margin-inline: auto;
+  font-size: 15px;
+  width: 90vw;
+  max-width: b.$desktop;
+}
+
+.section {
+  margin: 60px auto;
+  max-width: b.$desktop;
+
+  &__heading {
+    @include m.flex(column);
+    margin-bottom: 100px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 30px;
+
+    &-line::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background-color: pink;
+      position: absolute;
+      bottom: -40px;
+    }
+  }
+}
+
+.heading {
+  text-transform: uppercase;
+  @include m.font-simple(14px);
+
+  &__top {
+    @include m.font("Kaushan Script", cursive);
+    text-transform: initial;
+    font-size: 24px;
+  }
+}
+.gradient {
+  background: linear-gradient(0deg, c.$c-yellow 0%, c.$c-red 100%);
+}
+
+@media screen and (min-width: b.$tablet) {
+  .section {
+    margin-bottom: 90px;
+  }
+}

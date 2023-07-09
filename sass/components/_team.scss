@@ -1,0 +1,109 @@
+@use "./../utils/mixins" as m;
+@use "./../abstracts/breakpoints" as b;
+@use "./../abstracts/colors" as c;
+
+.team {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  &__description {
+    text-align: center;
+  }
+
+  &__photo {
+    width: 100%;
+    @include m.transition(transform);
+    &-description {
+      margin-top: 15px;
+      @include m.flex(column, center, 5px);
+    }
+  }
+
+  &__backdrop {
+    background-color: c.$c-green;
+  }
+
+  &__overlay {
+    @include m.flex(column, center, 0, center);
+    position: relative;
+    line-height: 0;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(
+        0deg,
+        c.$c-yellow-transparency 0%,
+        c.$c-red-transparency 100%
+      );
+      position: absolute;
+      opacity: 0;
+      transition-property: opacity, transform;
+      transition-duration: 350ms;
+      transition-timing-function: linear;
+    }
+  }
+
+  &__socials {
+    @include m.flex(row, center);
+    z-index: 9;
+    position: absolute;
+    background-color: c.$c-yellow;
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 350ms;
+    transition-timing-function: linear;
+
+    &-icon {
+      fill: c.$c-red;
+      width: 20px;
+      height: 20px;
+      @include m.transition(fill);
+    }
+
+    &-item {
+      padding: 10px;
+      width: calc(100% / 4) px;
+      border: 1px solid c.$c-red;
+      cursor: pointer;
+      @include m.transition(background-color);
+
+      &:is(:hover, :focus) {
+        background-color: c.$c-red;
+      }
+
+      &:is(:hover, :focus) .team__socials-icon {
+        fill: c.$c-white;
+      }
+    }
+  }
+}
+
+.team__item {
+  &:is(:hover, :focus) .team__overlay::after,
+  &:is(:hover, :focus) .team__photo,
+  &:is(:hover, :focus) .team__socials {
+    opacity: 1;
+    transform: translate(-10px, -10px);
+  }
+}
+
+@media screen and (min-width: b.$tablet) {
+  .team {
+    &__container {
+      margin-top: 100px;
+    }
+
+    &__description {
+      margin-top: 30px;
+      gap: 15px;
+    }
+  }
+}

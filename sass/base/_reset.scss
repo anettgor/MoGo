@@ -1,0 +1,34 @@
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+ul,
+button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+button,
+input,
+textarea,
+p,
+a {
+  font-family: inherit;
+}
+
+svg {
+  display: block;
+  overflow: visible;
+}

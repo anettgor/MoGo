@@ -1,0 +1,46 @@
+@use "./../utils/mixins" as m;
+@use "./../abstracts/colors" as c;
+@use "./../abstracts/breakpoints" as b;
+.hero {
+  padding: 100px;
+  @include m.flex(column);
+
+  &__heading {
+    @include m.font-simple(50px, 500, c.$c-white);
+    text-align: center;
+
+    &-top {
+      @include m.font-simple(25px, 400, c.$c-white);
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    text-transform: uppercase;
+    border: 1px solid c.$c-white;
+    color: c.$c-white;
+    width: 160px;
+    height: 40px;
+    font-size: 14px;
+    transition-property: box-shadow, font-weight;
+    transition-duration: 350ms;
+    transition-timing-function: linear;
+
+    &:is(:hover, :focus) {
+      box-shadow: 0px 0px 15px 0px c.$c-white;
+      font-weight: 700;
+    }
+  }
+}
+
+@media screen and (min-width: b.$desktop) {
+  .hero {
+    &__heading {
+      font-size: 100px;
+
+      &-top {
+        font-size: 50px;
+      }
+    }
+  }
+}

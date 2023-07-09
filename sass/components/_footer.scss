@@ -1,0 +1,78 @@
+@use "./../utils/mixins" as m;
+@use "./../abstracts/colors" as c;
+@use "./../abstracts/breakpoints" as b;
+
+.footer {
+  @include m.flex(column-reverse, space-between, 30px);
+  border-top: 1px solid c.$c-gray;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__accent {
+    color: c.$c-red;
+  }
+  &__form {
+    width: 90vw;
+    max-width: 350px;
+    height: 60px;
+    display: flex;
+
+    &-input {
+      background-color: transparent;
+      flex-grow: 2;
+      border: 1px solid c.$c-gray;
+      padding-inline: 10px;
+      @include m.transition(border);
+
+      &:is(:hover, :focus, :active) {
+        border: 1px solid c.$c-black;
+      }
+    }
+
+    &-button {
+      width: 100px;
+      padding-inline: 10px;
+      flex-grow: 1;
+      border: 1px solid c.$c-green;
+      background: c.$c-green;
+      color: c.$c-white;
+      transition-property: background, border;
+      transition-duration: 350ms;
+      transition-timing-function: linear;
+
+      &:is(:hover, :focus) {
+        background: c.$c-green-dark;
+        border: 1px solid c.$c-green-dark;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: b.$tablet) {
+  .footer {
+    @include m.flex(row, space-between, 0px);
+  }
+}
+
+.footer__form-test {
+  width: 90vw;
+  max-width: 350px;
+  height: 60px;
+  display: flex;
+}
+
+.footer__form-input-test {
+  background-color: transparent;
+  flex-grow: 2;
+  border: 1px solid c.$c-gray;
+  padding-inline: 10px;
+}
+
+.footer__form-button-test {
+  width: 100px;
+  padding-inline: 10px;
+  flex-grow: 1;
+  border: 1px solid c.$c-green;
+  background: c.$c-green;
+  color: c.$c-white;
+}

@@ -1,0 +1,108 @@
+@use "./../utils/mixins" as m;
+@use "./../abstracts/colors" as c;
+@use "./../abstracts/breakpoints" as b;
+
+.nav {
+  padding-top: 20px;
+  @include m.flex(row, space-between, 10px);
+  margin-inline: auto;
+  top: 0;
+
+  &__logo {
+    @include m.font-simple(30px, 700, c.$c-white);
+    width: 100%;
+    z-index: 99;
+  }
+
+  &__menu-container {
+    @include m.flex(row, center, 10px);
+  }
+  &__menu-icon-container {
+    @include m.flex(row, center, 20px);
+    z-index: 99;
+  }
+  &__menu-icon {
+    width: 25px;
+    height: 20px;
+    fill: c.$c-white;
+  }
+
+  &__menu {
+    display: none;
+
+    &-link {
+      color: c.$c-white;
+      text-decoration: none;
+    }
+
+    &-overlay {
+      background: linear-gradient(0deg, c.$c-yellow 0%, c.$c-red 100%);
+      position: fixed;
+      top: 0px;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 9;
+    }
+    &-mobile {
+      font-size: 30px;
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+
+      &-link {
+        color: #000;
+        z-index: 999;
+      }
+    }
+  }
+
+  &__menu-link {
+    position: relative;
+    @include m.transition(color);
+  }
+
+  &__menu-link:is(:hover, :focus) {
+    color: c.$c-yellow;
+  }
+
+  &__menu-link::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background-color: c.$c-yellow;
+    transform-origin: 100% 0%;
+    transform: scaleX(0);
+    @include m.transition(transform, 350ms, cubic-bezier(0.76, 0, 0.24, 1));
+  }
+
+  &__menu-link:is(:hover, :focus)::after {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+}
+
+@media screen and (min-width: b.$tablet) {
+  .menu-mobile-icon {
+    display: none;
+  }
+  .nav {
+    padding-top: 30px;
+    &__menu-icon-container {
+      @include m.flex(row, center, 10px);
+    }
+
+    &__menu {
+      @include m.flex(row, space-between, 0);
+      width: 100%;
+      @include m.font-simple(14px);
+    }
+  }
+}
