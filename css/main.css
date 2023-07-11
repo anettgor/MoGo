@@ -112,7 +112,7 @@ html {
 }
 .header {
   height: 100%;
-  background-image: linear-gradient(0deg, rgba(251, 227, 137, 0.8823529412) 0%, rgba(243, 129, 129, 0.8823529412) 100%), url("../../images/hero.jpg");
+  background-image: linear-gradient(0deg, rgba(251, 227, 137, 0.8823529412) 0%, rgba(243, 129, 129, 0.8823529412) 100%), url("./../images/hero.jpg");
   background-size: cover;
   background-position: center;
 }
