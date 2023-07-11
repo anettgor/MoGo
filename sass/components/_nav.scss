@@ -18,7 +18,6 @@
 
   &__menu-icon-container {
     @include m.grid-centered(20px, center);
-    align-items: center;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: 1fr;
     z-index: 99;
@@ -96,7 +95,8 @@
     padding-top: 30px;
 
     &__menu {
-      @include m.flex(row, space-between, 0);
+      @include m.grid-centered(null, stretch);
+      grid-template-columns: repeat(5, auto);
       width: 100%;
       @include m.font-simple(14px);
     }

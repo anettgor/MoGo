@@ -29,10 +29,11 @@
   gap: $gap;
 }
 
-@mixin grid-centered($gap, $justify: normal) {
+@mixin grid-centered($gap, $justify: normal, $align: center) {
   display: grid;
   gap: $gap;
   justify-items: $justify;
+  align-items: $align;
 }
 
 @mixin transition($property, $time: 350ms, $function: linear) {

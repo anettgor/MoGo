@@ -10,6 +10,7 @@
     grid-template-rows: 32px 1fr;
     padding-bottom: 20px;
     border-bottom: 1px solid c.$c-gray;
+    text-align: center;
   }
 
   &__icon {
@@ -26,7 +27,8 @@
     gap: 70px;
 
     &__item {
-      @include m.grid(30px, center);
+      @include m.grid-centered(30px, center, start);
+      text-align: left;
       grid-template-columns: 35px 1fr;
       grid-template-rows: 1fr;
       padding-bottom: 0px;
