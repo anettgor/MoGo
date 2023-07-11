@@ -29,6 +29,12 @@
   gap: $gap;
 }
 
+@mixin grid-centered($gap, $justify: normal) {
+  display: grid;
+  gap: $gap;
+  justify-items: $justify;
+}
+
 @mixin transition($property, $time: 350ms, $function: linear) {
   transition: $property $time $function;
 }
@@ -36,7 +42,7 @@
 @mixin transition-large(
   $property1,
   $property2,
-  $property3,
+  $property3: null,
   $time: 350ms,
   $function: linear
 ) {

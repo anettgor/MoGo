@@ -5,7 +5,9 @@
   @include m.grid(250px, 20px);
 
   &__item {
-    @include m.flex(column, center, 20px);
+    @include m.grid-centered(20px, center);
+    grid-template-columns: 1fr;
+    grid-template-rows: 32px 1fr;
     padding-bottom: 20px;
     border-bottom: 1px solid c.$c-gray;
   }
@@ -15,8 +17,7 @@
   }
 
   &__content {
-    @include m.flex(column, center, 20px);
-    text-align: center;
+    @include m.grid-centered(20px, center);
   }
 }
 
@@ -25,14 +26,15 @@
     gap: 70px;
 
     &__item {
-      @include m.flex(row, center, 30px, flex-start);
+      @include m.grid(30px, center);
+      grid-template-columns: 35px 1fr;
+      grid-template-rows: 1fr;
       padding-bottom: 0px;
       border: none;
     }
 
     &__content {
-      align-items: flex-start;
-      text-align: left;
+      justify-items: left;
     }
   }
 }

@@ -3,8 +3,10 @@
 @use "./../abstracts/breakpoints" as b;
 
 .nav {
+  @include m.grid-centered(0, center);
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr;
   padding-top: 20px;
-  @include m.flex(row, space-between, 10px);
   margin-inline: auto;
   top: 0;
 
@@ -18,7 +20,10 @@
     @include m.flex(row, center, 10px);
   }
   &__menu-icon-container {
-    @include m.flex(row, center, 20px);
+    @include m.grid-centered(20px, center);
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 1fr;
     z-index: 99;
   }
   &__menu-icon {
@@ -85,15 +90,13 @@
   }
 }
 
-@media screen and (min-width: b.$tablet) {
+@media all and (min-width: b.$tablet) {
   .menu-mobile-icon {
     display: none;
   }
   .nav {
+    grid-template-columns: 1fr 1fr 100px;
     padding-top: 30px;
-    &__menu-icon-container {
-      @include m.flex(row, center, 10px);
-    }
 
     &__menu {
       @include m.flex(row, space-between, 0);
