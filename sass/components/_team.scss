@@ -18,7 +18,8 @@
 
     &-description {
       margin-top: 15px;
-      @include m.flex(column, center, 5px);
+      @include m.grid-centered(5px, center);
+      grid-template-rows: repeat(2, auto);
     }
   }
 
@@ -49,7 +50,8 @@
   }
 
   &__socials {
-    @include m.flex(row, center);
+    display: grid;
+    grid-template-columns: repeat(4, auto);
     z-index: 9;
     position: absolute;
     background-color: c.$c-yellow;

@@ -3,7 +3,8 @@
 @use "./../abstracts/breakpoints" as b;
 
 .footer {
-  @include m.flex(column-reverse, space-between, 30px);
+  @include m.grid-centered(30px, center);
+  align-items: center;
   border-top: 1px solid c.$c-gray;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -13,6 +14,7 @@
   }
 
   &__form {
+    grid-row: 1;
     width: 90vw;
     max-width: 350px;
     height: 60px;
@@ -51,6 +53,11 @@
 
 @media screen and (min-width: b.$tablet) {
   .footer {
-    @include m.flex(row, space-between, 0px);
+    grid-template-columns: 1fr auto;
+    justify-items: stretch;
+
+    &__form {
+      grid-column: 2;
+    }
   }
 }

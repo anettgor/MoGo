@@ -68,11 +68,8 @@ html {
   max-width: 1200px;
 }
 .section__heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
+  display: grid;
+  justify-items: center;
   margin-bottom: 100px;
   position: relative;
   text-transform: uppercase;
@@ -178,13 +175,6 @@ html {
   width: 100%;
   z-index: 99;
 }
-.nav__menu-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
 .nav__menu-icon-container {
   display: grid;
   gap: 20px;
@@ -219,11 +209,9 @@ html {
 .nav__menu-mobile {
   font-size: 30px;
   margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
   gap: 30px;
+  justify-items: center;
 }
 .nav__menu-mobile-link {
   color: #000;
@@ -328,11 +316,10 @@ html {
 }
 .team__photo-description {
   margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
   gap: 5px;
+  justify-items: center;
+  grid-template-rows: repeat(2, auto);
 }
 .team__backdrop {
   background-color: #95e1d3;
@@ -360,11 +347,8 @@ html {
   transition-timing-function: linear;
 }
 .team__socials {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
   z-index: 9;
   position: absolute;
   background-color: #fbe389;
@@ -408,11 +392,10 @@ html {
   }
 }
 .footer {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
   gap: 30px;
+  justify-items: center;
+  align-items: center;
   border-top: 1px solid #ccc;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -421,6 +404,7 @@ html {
   color: #f38181;
 }
 .footer__form {
+  grid-row: 1;
   width: 90vw;
   max-width: 350px;
   height: 60px;
@@ -454,10 +438,10 @@ html {
 
 @media screen and (min-width: 768px) {
   .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0px;
+    grid-template-columns: 1fr auto;
+    justify-items: stretch;
+  }
+  .footer__form {
+    grid-column: 2;
   }
 }/*# sourceMappingURL=main.css.map */

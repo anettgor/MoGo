@@ -35,7 +35,7 @@ html {
   max-width: b.$desktop;
 
   &__heading {
-    @include m.flex(column);
+    @include m.grid-centered(null, center);
     margin-bottom: 100px;
     position: relative;
     text-transform: uppercase;
