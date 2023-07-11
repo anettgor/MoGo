@@ -330,6 +330,10 @@ html {
   width: 100%;
   transition: transform 350ms linear;
 }
+.team__photo-subheading {
+  font-style: italic;
+  font-weight: 300;
+}
 .team__photo-description {
   margin-top: 15px;
   display: grid;

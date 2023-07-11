@@ -16,6 +16,11 @@
     width: 100%;
     @include m.transition(transform);
 
+    &-subheading {
+      font-style: italic;
+      font-weight: 300;
+    }
+
     &-description {
       margin-top: 15px;
       @include m.grid-centered(5px, center);
